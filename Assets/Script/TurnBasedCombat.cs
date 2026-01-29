@@ -30,26 +30,29 @@ public class TurnBasedCombat : MonoBehaviour
     void SetupWave()
     {
         monsterStat = WaveManager.GetMonsterStat();
+
         waveText.text = $"WAVE {WaveManager.currentWave}";
         enemyHealthText.text = monsterStat.ToString();
         playerHealthText.text = "Community";
+
         CalculateAndShowChance();
     }
 
     void CalculateAndShowChance()
     {
         CommunityManager.GetCommunityStats(out int totalSurvival);
-        
-        // Chance asli
+
         float chance = (float)totalSurvival / (totalSurvival + monsterStat);
-        int basePercent = Mathf.RoundToInt(chance * 100f);
 
-        // TAMBAHAN 40% MUTLAK UNTUK DEBUG
-        cachedChancePercent = basePercent + 40;
-
+        cachedChancePercent = Mathf.RoundToInt(chance * 100f);
         cachedChancePercent = Mathf.Clamp(cachedChancePercent, 1, 99);
+
         chanceText.text = $"Chance to Survive: {cachedChancePercent}%";
-        Debug.Log($"Base: {basePercent}% | Bonus: +40% | Final: {cachedChancePercent}%");
+
+        Debug.Log($"WAVE {WaveManager.currentWave}");
+        Debug.Log($"Total Survival Akhir: {totalSurvival}");
+        Debug.Log($"Monster Stat: {monsterStat}");
+        Debug.Log($"Win Chance: {cachedChancePercent}%");
     }
 
     void ResolveBattle()
@@ -93,27 +96,28 @@ public class TurnBasedCombat : MonoBehaviour
     {
         if (WaveManager.IsLastWave())
         {
-            SceneManager.LoadScene("Good Ending");
+            SceneManager.LoadScene("WinScene");
         }
         else
         {
-            string targetScene = WaveManager.GetNextSceneName();
             WaveManager.NextWave();
-            SceneManager.LoadScene(targetScene);
+            SceneManager.LoadScene("HireSceneFix");
         }
     }
 
     void LoadLoseScene()
     {
-        SceneManager.LoadScene("Bad Ending");
+        SceneManager.LoadScene("LoseScene");
     }
 
     IEnumerator DoAttack(GameObject attacker, GameObject target, System.Action onComplete)
     {
         Vector3 start = attacker.transform.position;
         Vector3 end = start + (target.transform.position - start).normalized * 0.5f;
+
         yield return MoveOverTime(attacker, start, end, 0.15f);
         yield return MoveOverTime(attacker, end, start, 0.15f);
+
         onComplete?.Invoke();
     }
 
