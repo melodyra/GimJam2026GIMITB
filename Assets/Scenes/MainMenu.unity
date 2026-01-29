@@ -651,6 +651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 239218180}
   output: {fileID: 2002927190}
+  soundEffect: {fileID: 0}
 --- !u!1 &89762289
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,6 +874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 2002927190}
   output: {fileID: 239218180}
+  soundEffect: {fileID: 1206494838}
 --- !u!1 &239218180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,6 +1285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 2002927190}
   output: {fileID: 1372546713}
+  soundEffect: {fileID: 1206494838}
 --- !u!1 &507171284
 GameObject:
   m_ObjectHideFlags: 0
@@ -2290,6 +2293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 1501740170}
   output: {fileID: 2002927190}
+  soundEffect: {fileID: 1206494838}
 --- !u!1 &1001916264
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,7 +2773,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3841,6 +3845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 2002927190}
   output: {fileID: 1501740170}
+  soundEffect: {fileID: 1206494838}
 --- !u!1 &1681882002
 GameObject:
   m_ObjectHideFlags: 0
@@ -3988,6 +3993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 1372546713}
   output: {fileID: 2002927190}
+  soundEffect: {fileID: 1206494838}
 --- !u!1 &1686156873
 GameObject:
   m_ObjectHideFlags: 0
@@ -4507,6 +4513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3bbfaddb9b702846aff193c61909e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffect: {fileID: 1206494838}
 --- !u!1 &2002927190
 GameObject:
   m_ObjectHideFlags: 0
@@ -4870,6 +4877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 239218180}
   output: {fileID: 2002927190}
+  soundEffect: {fileID: 0}
 --- !u!114 &2091191589
 MonoBehaviour:
   m_ObjectHideFlags: 0
