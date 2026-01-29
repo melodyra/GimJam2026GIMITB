@@ -64,12 +64,17 @@ public class HireController : MonoBehaviour
     public GameObject NPC19panel;
     public GameObject resumepanelNPC19;
     public GameObject statsNPC19;
-    public StatPreview statPreview;
+    public GameObject TutorialPopUp;
+    public static bool sudahSelesaiTutorial = false;
+    
 
     public static string selectedNPC;
+    
+    public TutorialHireController tutorialScript;
 
     void Start()
     {
+        TutorialPopUp.SetActive(true);
         siluetpanel.SetActive(true);
 
         mikupanel.SetActive(false);
@@ -92,15 +97,34 @@ public class HireController : MonoBehaviour
         NPC17panel.SetActive(false);
         NPC18panel.SetActive(false);
         NPC19panel.SetActive(false);
+
+        if (sudahSelesaiTutorial)
+        {
+        if(TutorialPopUp != null) TutorialPopUp.SetActive(false);
+        }
+        else
+        {
+        if(TutorialPopUp != null) TutorialPopUp.SetActive(true);
+        }
     }
+
+    public void SetTutorialFinished()
+    {
+        sudahSelesaiTutorial = true;
+        if(TutorialPopUp != null) TutorialPopUp.SetActive(false);
+    }
+
     public void mikubutton()
     {
         selectedNPC = "miku";
-        if(statPreview != null) statPreview.ShowPreview("miku");
         HideAll();
         mikupanel.SetActive(true);
         resumepanelmiku.SetActive(true);
         statsmiku.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsmiku()
@@ -112,11 +136,14 @@ public class HireController : MonoBehaviour
     public void alaltenbutton()
     {
         selectedNPC = "alalten";
-        if(statPreview != null) statPreview.ShowPreview("alalten");
         HideAll();
         alaltenpanel.SetActive(true);
         resumepanelalalten.SetActive(true);
         statsalalten.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsalalten()
@@ -128,11 +155,14 @@ public class HireController : MonoBehaviour
     public void sicbg3button()
     {
         selectedNPC = "sicbg3";
-        if(statPreview != null) statPreview.ShowPreview("sicbg3");
         HideAll();
         sicbg3panel.SetActive(true);
         resumepanelsicbg3.SetActive(true);
         statssicbg3.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatssicbg3()
@@ -144,11 +174,14 @@ public class HireController : MonoBehaviour
     public void NPC1button()
     {
         selectedNPC = "NPC1";
-        if(statPreview != null) statPreview.ShowPreview("NPC1");
         HideAll();
         NPC1panel.SetActive(true);
         resumepanelNPC1.SetActive(true);
         statsNPC1.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC1()
@@ -160,11 +193,14 @@ public class HireController : MonoBehaviour
     public void NPC2button()
     {
         selectedNPC = "NPC2";
-        if(statPreview != null) statPreview.ShowPreview("NPC2");
         HideAll();
         NPC2panel.SetActive(true);
         resumepanelNPC2.SetActive(true);
         statsNPC2.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC2()
@@ -176,11 +212,14 @@ public class HireController : MonoBehaviour
     public void NPC3button()
     {
         selectedNPC = "NPC3";
-        if(statPreview != null) statPreview.ShowPreview("NPC3");
         HideAll();
         NPC3panel.SetActive(true);
         resumepanelNPC3.SetActive(true);
         statsNPC3.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC3()
@@ -192,11 +231,14 @@ public class HireController : MonoBehaviour
     public void NPC4button()
     {
         selectedNPC = "NPC4";
-        if(statPreview != null) statPreview.ShowPreview("NPC4");
         HideAll();
         NPC4panel.SetActive(true);
         resumepanelNPC4.SetActive(true);
         statsNPC4.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC4()
@@ -208,11 +250,14 @@ public class HireController : MonoBehaviour
     public void NPC5button()
     {
         selectedNPC = "NPC5";
-        if(statPreview != null) statPreview.ShowPreview("NPC5");
         HideAll();
         NPC5panel.SetActive(true);
         resumepanelNPC5.SetActive(true);
         statsNPC5.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC5()
@@ -224,11 +269,14 @@ public class HireController : MonoBehaviour
     public void NPC6button()
     {
         selectedNPC = "NPC6";
-        if(statPreview != null) statPreview.ShowPreview("NPC6");
         HideAll();
         NPC6panel.SetActive(true);
         resumepanelNPC6.SetActive(true);
         statsNPC6.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC6()
@@ -240,11 +288,14 @@ public class HireController : MonoBehaviour
     public void NPC7button()
     {
         selectedNPC = "NPC7";
-        if(statPreview != null) statPreview.ShowPreview("NPC7");
         HideAll();
         NPC7panel.SetActive(true);
         resumepanelNPC7.SetActive(true);
         statsNPC7.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC7()
@@ -256,11 +307,14 @@ public class HireController : MonoBehaviour
     public void NPC8button()
     {
         selectedNPC = "NPC8";
-        if(statPreview != null) statPreview.ShowPreview("NPC8");
         HideAll();
         NPC8panel.SetActive(true);
         resumepanelNPC8.SetActive(true);
         statsNPC8.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC8()
@@ -272,11 +326,14 @@ public class HireController : MonoBehaviour
     public void NPC9button()
     {
         selectedNPC = "NPC9";
-        if(statPreview != null) statPreview.ShowPreview("NPC9");
         HideAll();
         NPC9panel.SetActive(true);
         resumepanelNPC9.SetActive(true);
         statsNPC9.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC9()
@@ -288,11 +345,14 @@ public class HireController : MonoBehaviour
     public void NPC10button()
     {
         selectedNPC = "NPC10";
-        if(statPreview != null) statPreview.ShowPreview("NPC10");
         HideAll();
         NPC10panel.SetActive(true);
         resumepanelNPC10.SetActive(true);
         statsNPC10.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC10()
@@ -304,11 +364,14 @@ public class HireController : MonoBehaviour
     public void NPC14button()
     {
         selectedNPC = "NPC14";
-        if(statPreview != null) statPreview.ShowPreview("NPC14");
         HideAll();
         NPC14panel.SetActive(true);
         resumepanelNPC14.SetActive(true);
         statsNPC14.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC14()
@@ -320,11 +383,14 @@ public class HireController : MonoBehaviour
     public void NPC15button()
     {
         selectedNPC = "NPC15";
-        if(statPreview != null) statPreview.ShowPreview("NPC15");
         HideAll();
         NPC15panel.SetActive(true);
         resumepanelNPC15.SetActive(true);
         statsNPC15.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC15()
@@ -336,11 +402,14 @@ public class HireController : MonoBehaviour
     public void NPC16button()
     {
         selectedNPC = "NPC16";
-        if(statPreview != null) statPreview.ShowPreview("NPC16");
         HideAll();
         NPC16panel.SetActive(true);
         resumepanelNPC16.SetActive(true);
         statsNPC16.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC16()
@@ -352,11 +421,14 @@ public class HireController : MonoBehaviour
     public void NPC17button()
     {
         selectedNPC = "NPC17";
-        if(statPreview != null) statPreview.ShowPreview("NPC17");
         HideAll();
         NPC17panel.SetActive(true);
         resumepanelNPC17.SetActive(true);
         statsNPC17.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC17()
@@ -368,11 +440,14 @@ public class HireController : MonoBehaviour
     public void NPC18button()
     {
         selectedNPC = "NPC18";
-        if(statPreview != null) statPreview.ShowPreview("NPC18");
         HideAll();
         NPC18panel.SetActive(true);
         resumepanelNPC18.SetActive(true);
         statsNPC18.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC18()
@@ -384,11 +459,14 @@ public class HireController : MonoBehaviour
     public void NPC19button()
     {
         selectedNPC = "NPC19";
-        if(statPreview != null) statPreview.ShowPreview("NPC19");
         HideAll();
         NPC19panel.SetActive(true);
         resumepanelNPC19.SetActive(true);
         statsNPC19.SetActive(false);
+        if (tutorialScript != null) 
+    {
+        tutorialScript.StartTutorialSequence();
+    }
     }
 
     public void detailstatsNPC19()
