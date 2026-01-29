@@ -7,9 +7,9 @@ public class HireRandomSlot : MonoBehaviour
     public List<GameObject> npcButtons;
 
     [Header("Slot Posisi")]
-    public Vector2 slot1 = new Vector2(-580, 333);
-    public Vector2 slot2 = new Vector2(-580, 0);
-    public Vector2 slot3 = new Vector2(-580, -333);
+    public Vector2 slot1 = new Vector2(-627, 357);
+    public Vector2 slot2 = new Vector2(-627, -8 );
+    public Vector2 slot3 = new Vector2(-627, -374);
 
     void Start()
     {
