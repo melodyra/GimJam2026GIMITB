@@ -10,13 +10,24 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI textComponent2;
     public string[] lines1;
     public string[] lines2;
+    public AudioSource[] SFX;
     public float textSpeed;
+
+    float volume;
+
+    // Tambahkan ini agar bisa isi nama scene di Inspector
+    public string namaSceneTujuan; 
 
     private int index;
 
     // Start is called before the first frame update
     void Start()
     {
+        volume = 1;
+        if (PlayerPrefs.HasKey("sfxvolume"))
+        {
+            volume = PlayerPrefs.GetFloat("sfxvolume");
+        }
         textComponent1.text = string.Empty;
         textComponent2.text = lines2[0];
         StartDialogue();
@@ -47,6 +58,11 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        if(SFX[index] != null)
+        {
+            SFX[index].volume = volume;
+            SFX[index].Play();
+        }
         foreach (char c in lines1[index].ToCharArray())
         {
             textComponent1.text += c;
@@ -66,7 +82,7 @@ public class Dialogue : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(namaSceneTujuan); 
         }
     }
 }
